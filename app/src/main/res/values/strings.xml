@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">KatannaApplicationAndroid</string>
+    <string name="app_name">Film library</string>
+    <string name="toolbar_title">Films</string>
+    <string name="new_film">New film</string>
+    <string name="film_details">Film details</string>
+    <string name="film_name">Film name</string>
+    <string name="film_name_hint">Enter a film name</string>
+    <string name="genre">Genre</string>
+    <string name="comment">Comment</string>
+    <string name="comment_hint">Enter a comment</string>
+    <string name="watched">Watched</string>
+    <string name="favorite">Favorite</string>
+    <string name="changes_saved_message">Changes saved</string>
+    <string name="enter_film_name_message">Please, enter a film name</string>
+    <string name="watched_tab">Watched</string>
+    <string name="not_watched_tab">Not watched</string>
+    <string name="dialog_title">Choose genres</string>
+    <string name="apply">Apply</string>
+    <string-array name="genres">
+        <item>Comedy</item>
+        <item>Drama</item>
+        <item>Action movie</item>
+        <item>Thriller</item>
+        <item>Fantastic</item>
+        <item>Melodrama</item>
+        <item>Horror</item>
+    </string-array>
 </resources>
