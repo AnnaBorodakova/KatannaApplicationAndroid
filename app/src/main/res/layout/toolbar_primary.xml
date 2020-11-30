@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="@string/toolbar_title"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_button"
+        android:layout_toLeftOf="@+id/favorite_button"
+        app:srcCompat="@drawable/search"
+        android:layout_centerVertical="true"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"/>
+
+    <ImageButton
+        android:id="@+id/favorite_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/filter_button"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:onClick="onFavoriteButtonClick"
+        app:srcCompat="@drawable/star" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/filter_button"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/filter_icon"
+        android:onClick="showDialog"/>
+
+</RelativeLayout>

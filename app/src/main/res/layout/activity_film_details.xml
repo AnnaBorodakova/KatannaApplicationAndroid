@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:foregroundTint="#5A82C5"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/toolbar_secondary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/name_textbox"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/film_name"
+            android:textSize="20sp"></TextView>
+
+        <EditText
+            android:id="@+id/name_textbox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_label"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorAccent"
+            android:hint="@string/film_name_hint"
+            android:textSize="20sp"></EditText>
+
+        <TextView
+            android:id="@+id/genre_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_textbox"
+            android:layout_alignLeft="@+id/name_textbox"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/genre"
+            android:textSize="20sp"></TextView>
+
+
+        <Spinner
+            android:id="@+id/genre_spinner"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genre_label"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorAccent"
+            android:textSize="20sp"
+            ></Spinner>
+
+        <TextView
+            android:id="@+id/comment_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genre_spinner"
+            android:layout_alignLeft="@+id/name_textbox"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/comment"
+            android:textSize="20sp"></TextView>
+
+        <EditText
+            android:id="@+id/comment_textbox"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/comment_label"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorAccent"
+            android:hint="@string/comment_hint"
+            android:maxHeight="150dp"
+            android:textSize="20sp"></EditText>
+
+        <CheckBox
+            android:id="@+id/is_watched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/comment_textbox"
+            android:layout_alignLeft="@+id/name_textbox"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:buttonTint="@color/colorForCheckBox"></CheckBox>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/is_watched"
+            android:layout_toRightOf="@+id/is_watched"
+            android:text="@string/watched"
+            android:textSize="20sp"></TextView>
+
+
+        <CheckBox
+            android:id="@+id/is_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/is_watched"
+            android:layout_alignLeft="@+id/is_watched"
+            android:layout_marginTop="20dp"
+            android:buttonTint="@color/colorForCheckBox"></CheckBox>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/is_favourite"
+            android:layout_toRightOf="@+id/is_favourite"
+            android:text="@string/favorite"
+            android:textSize="20sp"></TextView>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

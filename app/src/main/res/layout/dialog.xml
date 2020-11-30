@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_title"
+            android:textColor="@color/colorWhite"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:textSize="20sp"></TextView>
+    </RelativeLayout>
+
+<ListView
+    android:id="@+id/genres_listview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:choiceMode="multipleChoice"
+    android:entries="@array/genres"></ListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/apply_filter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorWhite"
+            android:text="@string/apply"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="onApplyButtonClick"
+            ></Button>
+    </RelativeLayout>
+
+</LinearLayout>
