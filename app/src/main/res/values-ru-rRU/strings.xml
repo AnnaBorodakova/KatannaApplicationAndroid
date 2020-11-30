@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Фильмотека</string>
+    <string name="toolbar_title">Фильмы</string>
+    <string name="new_film">Новый фильм</string>
+    <string name="film_details">Детали фильма</string>
+    <string name="film_name">Название</string>
+    <string name="film_name_hint">Введите название фильма</string>
+    <string name="genre">Жанр</string>
+    <string name="comment">Комментарий</string>
+    <string name="comment_hint">Введите комментарий</string>
+    <string name="watched">Просмотрен</string>
+    <string name="favorite">Избранное</string>
+    <string name="changes_saved_message">Изменения сохранены</string>
+    <string name="enter_film_name_message">Введите название фильма</string>
+    <string-array name="genres">
+        <item>Комедия</item>
+        <item>Драма</item>
+        <item>Боевик</item>
+        <item>Триллер</item>
+        <item>Фантастика</item>
+        <item>Мелодрама</item>
+        <item>Ужасы</item>
+    </string-array>
+    <string name="watched_tab">Просмотренные</string>
+    <string name="not_watched_tab">Непросмотренные</string>
+    <string name="dialog_title">Выберите жанры</string>
+    <string name="apply">Применить</string>
+</resources>
