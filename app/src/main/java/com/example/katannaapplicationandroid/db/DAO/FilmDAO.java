@@ -25,4 +25,7 @@ public interface FilmDAO {
 
     @Query("SELECT * FROM film")
     List<Film> getAll();
+
+    @Query("SELECT * FROM film where filmName = :name")
+    List<Film> findFilm(String name);
 }

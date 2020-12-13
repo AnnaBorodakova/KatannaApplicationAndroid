@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.example.katannaapplicationandroid.Entity.Film;
+
+import com.example.katannaapplicationandroid.db.entity.Film;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class FilmAdapter extends ArrayAdapter<Film> {
             viewHolder = (ViewHolder) view.getTag();
         }
         Film film = films.get(position);
-        viewHolder.name.setText(film.getName());
+        viewHolder.name.setText(film.getFilmName());
         viewHolder.favorite.setVisibility(film.isFavorite() ? View.VISIBLE : View.INVISIBLE);
         return view;
     }

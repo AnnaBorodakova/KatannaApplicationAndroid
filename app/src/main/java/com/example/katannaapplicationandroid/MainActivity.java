@@ -2,6 +2,7 @@ package com.example.katannaapplicationandroid;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -10,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.katannaapplicationandroid.Entity.Film;
+import com.example.katannaapplicationandroid.db.AppDatabase;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
+
+    private static AppDatabase database;
 
     private static TabAdapter tabAdapter;
     private static TabLayoutMediator tabLayoutMediator;
@@ -35,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        database = Room.databaseBuilder(this, AppDatabase.class, "mainDB")
+                .allowMainThreadQueries()
+                .build();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -48,15 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                         if (position==0) tab.setText(getResources().getString(R.string.watched_tab));
-                       else tab.setText(getResources().getString(R.string.not_watched_tab));
+                        else tab.setText(getResources().getString(R.string.not_watched_tab));
                     }
                 });
         tabLayoutMediator.attach();
 
       /*  tabAdapter = new TabAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, this,
                 new String[]{getResources().getString(R.string.watched_tab), getResources().getString(R.string.not_watched_tab)});
-
-
         viewPager.setAdapter(tabAdapter);
         tabLayout.setupWithViewPager(viewPager);*/
 
@@ -74,16 +79,16 @@ public class MainActivity extends AppCompatActivity {
         dialog = new FilterByGenreDialogFragment();
 
 
-       // LayoutInflater factory = this.getLayoutInflater();
-      //  View view1 = factory.inflate(R.layout.dialog, null);
+        // LayoutInflater factory = this.getLayoutInflater();
+        //  View view1 = factory.inflate(R.layout.dialog, null);
 
-       // ListView genres = view1.findViewById(R.id.genres_listview);
+        // ListView genres = view1.findViewById(R.id.genres_listview);
 
         // создаем адаптер
-       // ArrayAdapter<String> adapter = new ArrayAdapter(this,
-               // R.layout.list_item);
+        // ArrayAdapter<String> adapter = new ArrayAdapter(this,
+        // R.layout.list_item);
         // устанавливаем для списка адаптер
-       // genres.setAdapter(adapter);
+        // genres.setAdapter(adapter);
 
 
 
@@ -110,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onApplyButtonClick(View view) {
         dialog.dismiss();
-       // genresListToFilter = dialog.getSelectedGenres();
+        // genresListToFilter = dialog.getSelectedGenres();
         if (genresListToFilter.size()!=0)
             tabAdapter.setFilterByGenreApplied(true);
         else tabAdapter.setFilterByGenreApplied(false);
@@ -118,7 +123,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    public static AppDatabase getDatabase() {
+        return database;
+    }
 
 
 }

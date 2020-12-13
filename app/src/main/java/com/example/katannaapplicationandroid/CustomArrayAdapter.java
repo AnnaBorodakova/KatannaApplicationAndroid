@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.example.katannaapplicationandroid.Entity.Film;
+import com.example.katannaapplicationandroid.db.entity.Film;
 
 import java.util.List;
 
