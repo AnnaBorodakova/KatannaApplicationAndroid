@@ -35,8 +35,8 @@ public class FilmDetailsActivity extends AppCompatActivity {
             title.setText(film.getFilmName());
             comment.setText(film.getComment());
             status.setChecked(film.isStatus());
-            // title.setFocusedByDefault(false);
             favorite.setChecked(film.isFavorite());
+            findViewById(R.id.delete_button).setVisibility(View.VISIBLE);
         }
 
         Spinner spinner = (Spinner) findViewById(R.id.genre_spinner);
@@ -62,7 +62,6 @@ public class FilmDetailsActivity extends AppCompatActivity {
         CheckBox favorite = findViewById(R.id.is_favourite);
         EditText comment = findViewById(R.id.comment_textbox);
         Bundle arguments = getIntent().getExtras();
-
         if (!name.getText().toString().equals("")) {
             if (arguments != null) {
                 Film film = (Film) arguments.get("film");
@@ -71,6 +70,13 @@ public class FilmDetailsActivity extends AppCompatActivity {
             }else addFilm(view, name.getText().toString(), genre.getSelectedItem().toString(), status.isChecked(),
                     favorite.isChecked(), comment.getText().toString());
         } else Toast.makeText(this, "Введите название фильма", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onDeleteButtonClick(View view){
+        Bundle arguments = getIntent().getExtras();
+        Film film = (Film) arguments.get("film");
+        MainActivity.getDatabase().filmDAO().delete(film);
+        onBackButtonClick(view);
     }
 
     public void updateFilm(View view, Film film, String name, String genre, boolean status, boolean favorite, String comment) {
